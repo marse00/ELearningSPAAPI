@@ -85,6 +85,47 @@ router.post('/api/files', async context => {
 	}
 })
 
+router.get('/api/contents', async context => {
+	//anyone logged in can access this
+	console.log('GET /api/contents')
+	const token = context.request.headers.get('')
+})
+
+router.post('/api/contents', async context => {
+	//Accounts with the teacher role can access this
+	console.log('POST /api/contents')
+})
+
+router.get('/api/contents/{:id}', async context => {
+	//anyone logged in can access this
+	console.log('GET /api/contents/{:id}')
+})
+
+router.get('/api/contents/{:id}/question', async context => {
+	//anyone logged in can access this
+	console.log('GET /api/contents/{:id}/question')
+})
+
+router.post('/api/contents/{:id}/question', async context => {
+	//The teacher that owns the content can access this
+	console.log('POST /api/contents/{:id}/question')
+})
+
+router.put('/api/contents/{:id}/question', async context => {
+	//The teacher that owns the content can access this
+	console.log('PUT /api/contents/{:id}/question')
+})
+
+router.get('/api/contents/{:id}/answers/{:userid}', async context => {
+	//only the student author of the question can access or teachers
+	console.log('GET /api/contents/{:id}/answers/{:userid}')
+})
+
+router.post('/api/contents/{:id}/answers', async context => {
+	//only students can access this
+	console.log('POST /api/contents/{:id}/answers')
+})
+
 router.get("/(.*)", async context => {      
 // 	const data = await Deno.readTextFile('static/404.html')
 // 	context.response.body = data
