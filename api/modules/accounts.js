@@ -12,6 +12,7 @@ export async function login(credentials) {
 	let sql = `SELECT count(id) AS count FROM accounts WHERE user="${user}";`
 	let records = await db.query(sql)
 	if(!records[0].count) throw new Error(`username "${user}" not found`)
+	console.log(records[0].pass)
 	sql = `SELECT pass FROM accounts WHERE user = "${user}";`
 	records = await db.query(sql)
 	const valid = await compare(pass, records[0].pass)
@@ -26,3 +27,8 @@ export async function register(credentials) {
 	await db.query(sql)
 	return true
 }
+
+export async function auth(user) {
+
+}
+

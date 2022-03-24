@@ -7,7 +7,7 @@ export async function setup(node) {
 	console.log('FOO: setup')
 	try {
 		console.log(node)
-		document.querySelector('header p').innerText = 'Foobar'
+		document.querySelector('body p').innerText = 'Foobar'
 		customiseNavbar(['home', 'logout', 'foo'])
 		if(localStorage.getItem('authorization') === null) loadPage('login')
 		// there is a token in localstorage

@@ -37,10 +37,25 @@ export async function triggerPageChange() {
 	article.id = page
 }
 
+
 function getPageName() {
 	console.log(window.location.pathname)
-	const path = window.location.pathname.replace('/', '')
+	let path = window.location.pathname.replace('/', '')
+	path = path + window.location.hash
+
 	let page = path ? path : 'home'
+	if(page == 'home') {
+		console.log(`page: ${page}`)
+		return page
+	}else{
+		page = page.split('#')
+	}
+
+	if(!isNaN(page.at(-1))){
+		page = page.at(-2)
+	}else{
+		page=page.at(-1)
+	}
 	console.log(`page: ${page}`)
 	return page
 }
@@ -98,6 +113,23 @@ export async function secureGet(url, token) {
 			'Content-Type': 'application/vnd.api+json',
 			'Accept': 'application/vnd.api+json'
 		}
+	}
+	console.log(options)
+	const response = await fetch(url, options)
+	const json = await response.json()
+	return { status: response.status, json: json }
+}
+
+export async function securePost(url, token,body) {
+	console.log('secure post')
+	const options = {
+		method: 'POST',
+		headers: {
+			'Authorization': token,
+			'Content-Type': 'application/vnd.api+json',
+			'Accept': 'application/vnd.api+json'
+		},
+		body: JSON.stringify(body)
 	}
 	console.log(options)
 	const response = await fetch(url, options)

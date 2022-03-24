@@ -7,7 +7,7 @@ export async function setup(node) {
 	try {
 		console.log('REGISTER: setup')
 		console.log(node)
-		document.querySelector('header p').innerText = 'Register an Account'
+		document.querySelector('body p').innerText = 'Register an Account'
 		customiseNavbar(['home', 'register', 'login'])
 		node.querySelector('form').addEventListener('submit', await register)
 	} catch(err) { // this will catch any errors in this script

@@ -47,7 +47,7 @@ app.use(async (context, next) => {
 					errors: [
 						{
 							title: '201 Unauthorized',
-							detail: 'the API uses HTTP Basic Auth and requires a correctly-formatted Authorization header'
+							detail: 'the API uses JWT Auth and requires a correctly-formatted Authorization header'
 						}
 					]
 				}

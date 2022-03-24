@@ -3,15 +3,14 @@
 	<head>
 		<meta charset="utf8" />
 		<meta name="viewport" content="width=device-width", initial-scale="1.0" />
-		<title>Single Page App</title>
+		<title>Git E-Learning</title>
 		<link rel="stylesheet" href="style/main.css">
 		<script type="module" src="./router.js" defer></script>
 	</head>
 	<body>
 		<aside class="hidden"><p></p></aside>
 		<header>
-			<h1>Single Page App</h1>
-			<p>&nbsp;</p>
+			<h1>Git E-Learning</h1>
 		</header>
 		<nav>
 			<ul>
@@ -20,8 +19,13 @@
 				<li><a href="/foo">Foo</a></li>
 				<li><a href="/login">Log in</a></li>
 				<li><a href="/logout">Log out</a></li>
+				<li><a href="/addcontent">Add Content</a></li>
+
+
+
 			</ul>
 		</nav>
+		<p>&nbsp;</p>
 		<main>
 			<article>
 			</article>
@@ -37,6 +41,7 @@
 			<p><label for="email">Username</label><br /><input type="text" name="user" placeholder="username" /></p>
 			<p><label for="pass">Password</label><br /><input type="password" name="pass" placeholder="password" /></p>
 			<p><button type="submit">Log in</button></p>
+
 		</form>
 	</template>
 	<template id="register">
@@ -55,6 +60,58 @@
 			<p><label for="pass">Choose a file</label><br /><input type="file" name="file" /></p>
 			<p><button type="submit">Upload</button></p>
 		</form>
+	</template>
+	<template id="addcontent">
+		<section>
+			<h2></h2>
+			<form>
+				<input id="title" type="text" placeholder="Enter content title" name="title" required></br>
+				<textarea id="content" type="text" placeholder="Enter content description" name="content" rows="7" cols="60" required></textarea></br>
+				<input id="image" type="file" name="image"></br>
+				<button type="submit">Add Content</button>
+			</form>
+
+		</section>
+	</template>
+	<template id="contentDetails">
+		<section>
+			<h2></h2>
+			<p id="content">Content: </p>
+			<p id="date">date added: </p>
+			<p id="author">Author: </p>
+			<img id="contentImage"    width="500" height="600">
+			<p id="question">question: </p>
+			<p id="answer1"></p>
+			<p id="answer2"></p>
+			<p id="answer3"></p>
+			<p id="answer4"></p>
+			<img id="questionImage" src=""  width="500" height="600">
+
+		</section>
+	</template>
+	<template id="contentSummary">
+		<section>
+			<a id="contentlink"><h2></h2></a>
+			<p id="date">date added: </p>
+			<p id="author">Author: </p>
+			<p id="accessed"></p>
+			<a id="questionlink"><p id="editquestion">Edit Question</p></a>
+		</section>
+	</template>
+	<template id="question">
+		<section>
+			<h2></h2>
+			<form>
+				<textarea id="question" type="text" placeholder="Enter question" name="question" rows="7" cols="60" required></textarea></br>
+				<input id="answer1" type="text" placeholder="Enter first answer" name="answer1" required><input type="radio" value="1" name="correct"></br>
+				<input id="answer2" type="text" placeholder="Enter second answer" name="answer2" required><input type="radio" value="2" name="correct"></br>
+				<input id="answer3" type="text" placeholder="Enter third answer" name="answer3" required><input type="radio" value="3" name="correct"></br>
+				<input id="answer4" type="text" placeholder="Enter fourth answer" name="answer4" required><input type="radio" value="4" name="correct"></br>
+				<input id="image" type="file" name="image"></br>
+				<button type="submit">Add Question</button>
+			</form>
+
+		</section>
 	</template>
 	<template id="quote">
 		<section>

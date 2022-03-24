@@ -4,3 +4,55 @@
 @import url(./material.css) (pointer: coarse);
 
 @import url(./custom.css) (pointer: fine);
+
+
+h1, section, ul {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+	margin-top: 50px;
+	position: relative;
+}
+
+section {
+	background-color: #F1FAEE;
+	font: 15px Arial;
+	color: #457B9D;
+	border-radius: 25px;
+	padding: 20px;
+	margin: 30px;
+	text-decoration: none;
+}
+
+section a {
+	color: #F1FAEE
+	text-decoration: none;
+}
+
+h1 {
+	color: #E63946;
+	font: Arial;
+}
+body {
+	background-color: #A8DADC;
+}
+li {
+	width: 100px;
+	color: #F1FAEE;
+	float: left;
+	text-align: center;
+	margin: 4px;
+	padding: 2px;
+	background-color: #1D3557;
+}
+li a {
+	text-decoration: none;
+	color: white;
+	font; roboto;
+	font-size: 16px;
+	
+}

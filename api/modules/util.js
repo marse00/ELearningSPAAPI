@@ -21,7 +21,7 @@ export function extractCredentials(token) {
 	if(token === undefined) throw new Error('no auth header')
 	const [type, hash] = token.split(' ')
 	console.log(`${type} : ${hash}`)
-	if(type !== 'Basic') throw new Error('wrong auth type')
+	if(type !== 'Bearer') throw new Error('wrong auth type')
 	const str = atob(hash)
 	console.log(str)
 	if(str.indexOf(':') === -1) throw new Error('invalid auth format')
